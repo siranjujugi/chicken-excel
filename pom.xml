@@ -2,11 +2,11 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>com.research</groupId>
-	<artifactId>r-apache-poi</artifactId>
-	<packaging>war</packaging>
+	<groupId>com.chicken</groupId>
+	<artifactId>chicken-excel</artifactId>
+	<packaging>jar</packaging>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>r-apache-poi</name>
+	<name>chicken-excel</name>
 
 	<properties>
 		<spring.version>3.1.1.RELEASE</spring.version>
@@ -85,19 +85,7 @@
 	</repositories>
 
 	<build>
-		<finalName>poi</finalName>
 		<plugins>
-
-			<!-- Plugin to run and test through maven -->
-			<plugin>
-				<groupId>org.mortbay.jetty</groupId>
-				<artifactId>maven-jetty-plugin</artifactId>
-				<version>6.1.25</version>
-				<configuration>
-					<scanIntervalSeconds>3</scanIntervalSeconds>
-				</configuration>
-			</plugin>
-
 			<!-- Ensures we are compiling at 1.6 level -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -108,17 +96,6 @@
 					<target>${java.version}</target>
 				</configuration>
 			</plugin>
-
-			<!-- Tomcat plugin for embedded tomcat -->
-			<plugin>
-				<groupId>org.codehaus.mojo</groupId>
-				<artifactId>tomcat-maven-plugin</artifactId>
-				<version>1.1</version>
-				<configuration>
-					<path>/${project.build.finalName}</path>
-				</configuration>
-			</plugin>
-
 		</plugins>
 	</build>
 </project>
