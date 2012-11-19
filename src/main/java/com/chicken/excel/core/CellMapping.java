@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.chicken.excel;
+package com.chicken.excel.core;
 
 /**
  * Maintain a mapping between an excel cell and java bean property.

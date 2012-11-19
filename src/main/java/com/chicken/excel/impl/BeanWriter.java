@@ -12,9 +12,12 @@ import java.util.Map;
 
 import org.apache.poi.ss.usermodel.Cell;
 
-import com.chicken.excel.CellMapping;
+import com.chicken.excel.core.CellMapping;
 
 /**
+ * Populate bean's property with data from {@link Cell}. The mapping between bean's property and
+ * {@link Cell} is determined by {@link CellMapping}.
+ * 
  * @author tamnguyen
  * 
  */
@@ -64,7 +67,6 @@ public class BeanWriter<B>
 		catch (IllegalAccessException | IllegalArgumentException | InvocationTargetException e)
 		{
 			// do nothing.
-			System.out.println(e);
 		}
 	}
 

@@ -7,16 +7,16 @@ import java.util.Enumeration;
 import java.util.Iterator;
 import java.util.List;
 
-import org.apache.poi.hssf.usermodel.HSSFSheet;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.ss.usermodel.Sheet;
 
-import com.chicken.excel.CellMapping;
+import com.chicken.excel.core.CellMapping;
 
 /**
  * @author tamnguyen
  */
-public class XLSSheetEnumerator<T> implements Enumeration<T>
+public class SheetEnumerator<T> implements Enumeration<T>
 {
 	private final Iterator<Row> _iRows;
 	private final Class<T> _beanClass;
@@ -24,12 +24,12 @@ public class XLSSheetEnumerator<T> implements Enumeration<T>
 	private List<CellMapping> _cellMappings;
 	private BeanWriter<T> _beanWriter;
 
-	public XLSSheetEnumerator(final HSSFSheet sheet, Class<T> clazz)
+	public SheetEnumerator(final Sheet sheet, Class<T> clazz)
 	{
 		_iRows = sheet.iterator();
 		_beanClass = clazz;
 		_beanWriter = new BeanWriter<>(_beanClass);
-		_cellMappings = new XLSCellMappingBuilder(_beanClass, sheet).buildCellMappings();
+		_cellMappings = new CellMappingBuilderLocal(_beanClass, sheet).buildCellMappings();
 
 		ignoreFirstRow();
 	}

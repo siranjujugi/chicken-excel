@@ -3,7 +3,7 @@
  */
 package com.chicken.excel.impl;
 
-import com.chicken.excel.CellMapping;
+import com.chicken.excel.core.CellMapping;
 
 /**
  * Default implementation of {@link CellMapping}
