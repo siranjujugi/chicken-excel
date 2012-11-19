@@ -6,7 +6,7 @@ package com.chicken.excel;
 import java.io.FileInputStream;
 import java.util.Enumeration;
 
-import com.chicken.excel.impl.XLSExcelReader;
+import com.chicken.excel.impl.XLSReader;
 
 /**
  * @author tamnguyen
@@ -23,7 +23,7 @@ public class Main
 
 		FileInputStream in = new FileInputStream("test.xls");
 		long t1 = System.currentTimeMillis();
-		ExcelReader<User> reader = new XLSExcelReader<>(User.class, in);
+		ExcelReader<User> reader = new XLSReader<>(User.class, in);
 		Enumeration<User> enumeration = reader.read("user");
 		int count = 0;
 		while (enumeration.hasMoreElements())

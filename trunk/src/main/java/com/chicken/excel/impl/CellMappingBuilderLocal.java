@@ -8,25 +8,25 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-import org.apache.poi.hssf.usermodel.HSSFSheet;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.ss.usermodel.Sheet;
 
-import com.chicken.excel.CellMapping;
-import com.chicken.excel.CellMappingBuilder;
+import com.chicken.excel.core.CellMapping;
+import com.chicken.excel.core.CellMappingBuilder;
 
 /**
- * A {@link CellMappingBuilder} for xls file format.
+ * A default implementation of {@link CellMappingBuilder}.
  * 
  * @author tamnguyen
  * 
  */
-public class XLSCellMappingBuilder implements CellMappingBuilder
+public class CellMappingBuilderLocal implements CellMappingBuilder
 {
 	private final Class<?> _beanClass;
-	private final HSSFSheet _hssfSheet;
+	private final Sheet _hssfSheet;
 
-	public XLSCellMappingBuilder(Class<?> beanClass, HSSFSheet hssfSheet)
+	public CellMappingBuilderLocal(Class<?> beanClass, Sheet hssfSheet)
 	{
 		_beanClass = beanClass;
 		_hssfSheet = hssfSheet;

@@ -7,16 +7,16 @@ import java.util.Enumeration;
 
 import org.junit.Test;
 
-import com.chicken.excel.impl.XLSExcelReader;
+import com.chicken.excel.impl.XLSXReader;
 
-public class XLSExcelReaderTests
+public class XLSXReaderTests
 {
 
 	@Test
 	public void testRead() throws Exception
 	{
-		FileInputStream in = new FileInputStream("test.xls");
-		ExcelReader<User> reader = new XLSExcelReader<>(User.class, in);
+		FileInputStream in = new FileInputStream("test.xlsx");
+		ExcelReader<User> reader = new XLSXReader<>(User.class, in);
 
 		Enumeration<User> enumeration = reader.read("user");
 		assertNotNull(enumeration);
